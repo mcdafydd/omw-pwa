@@ -288,9 +288,10 @@ class OmwApp extends LitElement {
   async getApi(endpoint) {
     try {
       let response = await fetch(`http://localhost:31337/omw/${endpoint}`, {
-        method: 'GET',
-        mode: 'same-origin',
         cache: 'no-cache',
+        credentials: 'omit',
+        method: 'GET',
+        mode: 'cors',
         redirect: 'error',
         referrer: 'no-referrer',
       });
@@ -310,12 +311,13 @@ class OmwApp extends LitElement {
   async postApi(endpoint, body) {
     try {
       let response = await fetch(`http://localhost:31337/omw/${endpoint}`, {
-        method: 'POST',
+        cache: 'no-cache',
+        credentials: 'omit',
         headers: {
           'Content-Type': 'application/json'
         },
-        mode: 'same-origin',
-        cache: 'no-cache',
+        method: 'POST',
+        mode: 'cors',
         redirect: 'error',
         referrer: 'no-referrer',
         body: JSON.stringify(body)
