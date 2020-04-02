@@ -1,0 +1,104 @@
+/* Build a Material theme */
+// Import theme requirements that will be re-imported by components and subcomponents
+//@import "@material/theme/color-palette";
+//@import "@material/theme/functions";
+//@import "@material/theme/mixins";
+//@import "@material/theme/variables";
+
+/*  Typography */
+  // To change your theme's typography, we recommend importing a font from Google Fonts and setting the global font-family https://fonts.google.com
+  @import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500');
+  $omw-font-family: unquote("Roboto, sans-serif");
+
+/* Shape */
+// The shapes of small, medium, and large components can be themed by overriding the default values. We recommend using our shape customization tool to help you pick your radius values. https://material.io/design/shape/about-shape.html#shape-customization-tool
+//$mdc-shape-small-component-radius: 4px;
+//$mdc-shape-medium-component-radius: 4px;
+//$mdc-shape-large-component-radius: 0px;
+
+/* Primary theme CSS custom properties */
+/* These are inherited by all components and sub-components */
+/* Commented values starting with --mdc are properties exposed by MWC web components we use */
+:root {
+  font-family: $omw-font-family;
+  font-size:1.15em;
+  --omw-font-family: #{$omw-font-family};
+
+  /* Color */
+  // To change your theme's color scheme, replace the existing HEX color values with custom HEX color values. Use our color palette generator to help come up with pairings and check your color contrast. https://material.io/design/color/the-color-system.html#tools-for-picking-colors
+
+  // Primary colors ($mdc-theme-primary) map to components such as app bars and buttons, while secondary colors ($mdc-theme-secondary) are used as accents on components such as FABs and selection controls.
+  --mdc-theme-primary: #6200ee;
+  --mdc-theme-secondary: #03DAC6; // #018786
+  --mdc-theme-secondary: #03DAC6; // #018786
+
+  // Theme background ($mdc-theme-background) appears behind scrollable content. Surface color ($mdc-theme-surface) is mapped to the surface of components such as cards, sheets, and menus. Error color ($mdc-theme-error) is used to indicate an error state for components such as text fields provided with inaccurate input.
+  --mdc-theme-surface: #ffffff;
+  --mdc-theme-background: #ffffff;
+  --mdc-theme-error: #b00020;
+
+  // dark/light properties
+/*  --mdc-theme-text-primary-on-light: #b00020;
+  --mdc-theme-text-secondary-on-light: #b00020;
+  --mdc-theme-text-hint-on-light: #b00020;*/
+  --mdc-theme-text-disabled-on-light: #af6149;
+ /* --mdc-theme-text-icon-on-light: #b00020;
+  --mdc-theme-text-primary-on-dark: #b00020;
+  --mdc-theme-text-secondary-on-dark: #b00020;
+  --mdc-theme-text-hint-on-dark: #b00020;
+  --mdc-theme-text-disabled-on-dark: #b00020;
+  --mdc-theme-text-icon-on-dark: #b00020;
+  --mdc-theme-text-icon-on-background
+  --mdc-theme-text-primary-on-background
+  --mdc-theme-text-secondary-on-background
+  --mdc-theme-hint-on-background
+
+  // “On-” colors define how text, icons, and strokes are colored in relation to the surface on which they appear. If you are updating these manually, be sure to consider accessible color contrast for the value pairs.
+  --mdc-theme-on-primary: #ffffff;
+  --mdc-theme-on-secondary: #ffffff;
+  --mdc-theme-on-error: #ffffff;
+  --mdc-theme-on-surface: #000000;
+
+  --mdc-icon-font: #{$omw-font-family};
+/*--mdc-icon-button-size
+  --mdc-icon-size
+  --mdc-button-text-transform
+  --mdc-button-letter-spacing
+  --mdc-button-horizontal-padding
+  --mdc-button-outline-width
+  --mdc-button-outline-color
+  --mdc-button-disabled-fill-color
+  --mdc-button-disabled-ink-color
+  --mdc-button-disabled-outline-color
+  --mdc-button-raised-box-shadow
+  --mdc-button-raised-box-shadow-hover
+  --mdc-button-raised-box-shadow-active
+  --mdc-button-raised-box-shadow-disabled
+  --mdc-dialog-scrim-color
+  --mdc-dialog-heading-ink-color
+  --mdc-dialog-content-ink-color
+  --mdc-dialog-scroll-divider-color
+  --mdc-dialog-min-width
+  --mdc-dialog-max-width
+  --mdc-dialog-max-height
+  --mdc-dialog-shape-radius
+  --mdc-dialog-box-shadow
+  --mdc-fab-box-shadow
+  --mdc-fab-box-shadow-hover
+  --mdc-fab-box-shadow-active
+  --mdc-icon-button-ripple-opacity
+  --mdc-list-side-padding
+  --mdc-list-item-meta-size
+  --mdc-list-item-graphic-size
+  --mdc-list-item-graphic-margin
+  --mdc-snackbar-action-color
+  --mdc-text-field-filled-border-radius
+  --mdc-text-field-outlined-idle-border-color
+  --mdc-text-field-outlined-hover-border-color
+  --mdc-text-field-outlined-disabled-border-color
+  --mdc-text-field-fill-color
+  --mdc-text-field-disabled-fill-color
+  --mdc-text-field-ink-color
+  --mdc-text-field-label-ink-color
+  --mdc-text-field-disabled-ink-color*/
+}

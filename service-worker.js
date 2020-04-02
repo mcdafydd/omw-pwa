@@ -1,4 +1,5 @@
-importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
+import {createHandlerBoundToURL} from 'workbox-precaching';
+import {NavigationRoute, registerRoute} from 'workbox-routing';
 
 self.addEventListener('message', (event) => {
   if (event.data && event.data.type === 'SKIP_WAITING') {
@@ -6,20 +7,25 @@ self.addEventListener('message', (event) => {
   }
 });
 
-workbox.precaching.precacheAndRoute([]);
+workbox.precaching.precacheAndRoute(self.__WB_MANIFEST);
 
-workbox.routing.registerNavigationRoute(
-  // look up its corresponding cache key for /view1
-  workbox.precaching.getCacheKeyForURL('/app')
-);
+let navigationRoute;
 
-workbox.routing.registerNavigationRoute(
-  // look up its corresponding cache key for /view1
-  workbox.precaching.getCacheKeyForURL('/edit')
-);
+navigationRoute = New NavigationRoute(createHandlerBoundToURL('/'));
+registerRoute(navigationRoute);
 
-workbox.routing.registerNavigationRoute(
-  // look up its corresponding cache key for /view1
-  workbox.precaching.getCacheKeyForURL('/report')
-);
+navigationRoute = New NavigationRoute(createHandlerBoundToURL('/settings'));
+registerRoute(navigationRoute);
+
+navigationRoute = New NavigationRoute(createHandlerBoundToURL('/extras'));
+registerRoute(navigationRoute);
+
+navigationRoute = New NavigationRoute(createHandlerBoundToURL('/usage'));
+registerRoute(navigationRoute);
+
+navigationRoute = New NavigationRoute(createHandlerBoundToURL('/about'));
+registerRoute(navigationRoute);
+
+navigationRoute = New NavigationRoute(createHandlerBoundToURL('/whatsnew'));
+registerRoute(navigationRoute);
 

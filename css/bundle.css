@@ -1,0 +1,748 @@
+@charset "UTF-8";
+/* Build a Material theme */
+/*  Typography */
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500");
+/* Shape */
+/* Primary theme CSS custom properties */
+/* These are inherited by all components and sub-components */
+/* Commented values starting with --mdc are properties exposed by MWC web components we use */
+:root {
+  font-family: Roboto, sans-serif;
+  font-size: 1.15em;
+  --omw-font-family: Roboto, sans-serif;
+  /* Color */
+  --mdc-theme-primary: #6200ee;
+  --mdc-theme-secondary: #03DAC6;
+  --mdc-theme-secondary: #03DAC6;
+  --mdc-theme-surface: #ffffff;
+  --mdc-theme-background: #ffffff;
+  --mdc-theme-error: #b00020;
+  /*  --mdc-theme-text-primary-on-light: #b00020;
+  --mdc-theme-text-secondary-on-light: #b00020;
+  --mdc-theme-text-hint-on-light: #b00020;*/
+  --mdc-theme-text-disabled-on-light: #af6149;
+  /* --mdc-theme-text-icon-on-light: #b00020;
+  --mdc-theme-text-primary-on-dark: #b00020;
+  --mdc-theme-text-secondary-on-dark: #b00020;
+  --mdc-theme-text-hint-on-dark: #b00020;
+  --mdc-theme-text-disabled-on-dark: #b00020;
+  --mdc-theme-text-icon-on-dark: #b00020;
+  --mdc-theme-text-icon-on-background
+  --mdc-theme-text-primary-on-background
+  --mdc-theme-text-secondary-on-background
+  --mdc-theme-hint-on-background
+
+  // “On-” colors define how text, icons, and strokes are colored in relation to the surface on which they appear. If you are updating these manually, be sure to consider accessible color contrast for the value pairs.
+  --mdc-theme-on-primary: #ffffff;
+  --mdc-theme-on-secondary: #ffffff;
+  --mdc-theme-on-error: #ffffff;
+  --mdc-theme-on-surface: #000000;
+
+  --mdc-icon-font: Roboto, sans-serif;
+/*--mdc-icon-button-size
+  --mdc-icon-size
+  --mdc-button-text-transform
+  --mdc-button-letter-spacing
+  --mdc-button-horizontal-padding
+  --mdc-button-outline-width
+  --mdc-button-outline-color
+  --mdc-button-disabled-fill-color
+  --mdc-button-disabled-ink-color
+  --mdc-button-disabled-outline-color
+  --mdc-button-raised-box-shadow
+  --mdc-button-raised-box-shadow-hover
+  --mdc-button-raised-box-shadow-active
+  --mdc-button-raised-box-shadow-disabled
+  --mdc-dialog-scrim-color
+  --mdc-dialog-heading-ink-color
+  --mdc-dialog-content-ink-color
+  --mdc-dialog-scroll-divider-color
+  --mdc-dialog-min-width
+  --mdc-dialog-max-width
+  --mdc-dialog-max-height
+  --mdc-dialog-shape-radius
+  --mdc-dialog-box-shadow
+  --mdc-fab-box-shadow
+  --mdc-fab-box-shadow-hover
+  --mdc-fab-box-shadow-active
+  --mdc-icon-button-ripple-opacity
+  --mdc-list-side-padding
+  --mdc-list-item-meta-size
+  --mdc-list-item-graphic-size
+  --mdc-list-item-graphic-margin
+  --mdc-snackbar-action-color
+  --mdc-text-field-filled-border-radius
+  --mdc-text-field-outlined-idle-border-color
+  --mdc-text-field-outlined-hover-border-color
+  --mdc-text-field-outlined-disabled-border-color
+  --mdc-text-field-fill-color
+  --mdc-text-field-disabled-fill-color
+  --mdc-text-field-ink-color
+  --mdc-text-field-label-ink-color
+  --mdc-text-field-disabled-ink-color*/ }
+
+body {
+  display: flex;
+  margin: 0; }
+
+.remix-fab {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 200; }
+
+/*
+.theme-builder-drawer {
+  @include mdc-drawer-surface-fill-color(white);
+  @include mdc-drawer-shape-radius(0);
+  width: 400px;
+  height: auto;
+  z-index: 999;
+
+  &.mdc-drawer--modal {
+    height: 100%;
+  }
+
+  .mdc-drawer__header {
+    padding: 24px;
+  }
+
+  .theme-builder-drawer-divider {
+    margin: -1px;
+  }
+  
+  .mdc-drawer__content {
+    padding: 24px;
+    color: rgba(0, 0, 0, .87);
+  }
+  
+  h6 {
+    color: rgba(0, 0, 0, .6);
+    margin: 0;
+  }
+  p {
+    margin-block-start: 0.5em;
+    margin-block-end: 1.25em;
+  }
+  
+  .mdc-tab {
+    font-family: Roboto, sans-serif;
+    @include mdc-tab-active-text-label-color(#6200ee)
+    @include mdc-tab-states-color(#6200ee)
+    @include mdc-tab-text-label-color(black)
+    
+    .mdc-tab-indicator--active {
+      @include mdc-tab-ink-color(#6200ee);
+    }
+    
+    .mdc-tab-indicator {
+      @include mdc-tab-indicator-underline-color(#6200ee);
+    }
+  }
+  
+  a {
+    color: #6200ee;
+    text-decoration: none;
+    font-family: Roboto, sans-serif;
+
+    &:hover, &:focus {
+      text-decoration: underline;
+      outline: none;
+    }
+  }
+  
+  code {
+    font-family: 'Roboto mono';
+    background: $material-color-grey-200;
+  }
+  
+  .mdc-form-field {
+    margin: 12px 0;
+    
+    .rtl-switch {
+      @include mdc-switch-toggled-off-color(white);
+      @include mdc-switch-toggled-off-track-color(black);
+      margin-right: 16px;
+    }
+  }
+  
+  .section-header a {
+    color: rgba(0, 0, 0, 0.54);
+  
+    &:hover, &:focus {
+      color: rgba(0, 0, 0, 0.87);
+    }
+  }
+}
+  
+.theme-builder-title {
+  color: $material-color-grey-800;
+  font-family: 'Roboto', sans-serif;
+  font-style: italic;
+  font-weight: 800;
+
+  svg {
+    vertical-align: -3px;
+    margin-right: 4px;
+  }
+}
+
+.drawer-content--theme-summary {
+  display: none;
+}
+*/
+.theme-name {
+  margin-bottom: 0; }
+
+.theme-name:focus {
+  outline: 1px solid rgba(0, 0, 0, 0.12); }
+
+.theme-name:empty:before {
+  content: attr(placeholder);
+  color: rgba(0, 0, 0, 0.6); }
+
+/*
+// Theme Summary content
+
+.mdc-list-divider.theme-summary-divider {
+  border-bottom-width: 2px;
+  margin: 20px 0;
+}
+
+.theme-summary-line {
+  @include mdc-typography(caption);
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 8px 0;
+
+  figure {
+    margin: 0;
+  }
+
+  .theme-summary-code {
+    background: none;
+  }
+
+  .theme-summary-color {
+    width: 20px;
+    height: 20px;
+    border: 1px solid $material-color-grey-400;
+    border-radius: 50%;
+  }
+
+  .theme-summary-shape {
+    @include mdc-typography(button);
+
+    width: 48px;
+    height: 36px;
+    line-height: 36px;
+    text-align: center;
+    background: $material-color-grey-100;
+    border: 1px solid $material-color-grey-600;
+  }
+  
+  &.theme-summary-line--typography {
+    margin: 0;
+  }
+
+  .theme-summary-typography {
+    width: 120px;
+
+    // Draw typography baselines
+    &.mdc-typography--headline1 {
+      $line-height: 6rem;
+      @include mdc-typography-baseline-top($line-height);
+      @include mdc-typography-baseline-bottom($line-height);
+    }
+    &.mdc-typography--headline2 {
+      $line-height: 3.75rem;
+      @include mdc-typography-baseline-top($line-height);
+      @include mdc-typography-baseline-bottom($line-height);
+    }
+    &.mdc-typography--headline3 {
+      $line-height: 3.125rem;
+      @include mdc-typography-baseline-top($line-height);
+      @include mdc-typography-baseline-bottom($line-height);
+    }
+    &.mdc-typography--headline4 {
+      $line-height: 2.5rem;
+      @include mdc-typography-baseline-top($line-height);
+      @include mdc-typography-baseline-bottom($line-height);
+    }
+    &.mdc-typography--headline5 {
+      $line-height: 2rem;
+      @include mdc-typography-baseline-top($line-height);
+      @include mdc-typography-baseline-bottom($line-height);
+    }
+    &.mdc-typography--headline6,
+    &.mdc-typography--subtitle1,
+    &.mdc-typography--subtitle2,
+    &.mdc-typography--body1,
+    &.mdc-typography--body2,
+    &.mdc-typography--caption,
+    &.mdc-typography--button,
+    &.mdc-typography--overline {
+      $line-height: 2rem;
+      @include mdc-typography-baseline-top($line-height);
+      @include mdc-typography-baseline-bottom($line-height);
+    }
+  }
+
+  // Application of color
+  .theme-summary-color--primary {
+    background: $mdc-theme-primary;
+  }
+  .theme-summary-color--on-primary {
+    background: $mdc-theme-on-primary;
+  }
+  .theme-summary-color--secondary {
+    background: $mdc-theme-secondary;
+  }
+  .theme-summary-color--on-secondary {
+    background: $mdc-theme-on-secondary;
+  }
+  .theme-summary-color--error {
+    background: $mdc-theme-error;
+  }
+  .theme-summary-color--on-error {
+    background: $mdc-theme-on-error;
+  }
+  .theme-summary-color--surface {
+    background: $mdc-theme-surface;
+  }
+  .theme-summary-color--on-surface {
+    background: $mdc-theme-on-surface;
+  }
+  .theme-summary-color--background {
+    background: $mdc-theme-background;
+  }
+
+  // Application of shape
+  .theme-summary-shape--small {
+    @include mdc-shape-radius($mdc-shape-small-component-radius);
+  }
+  .theme-summary-shape--medium {
+    @include mdc-shape-radius($mdc-shape-medium-component-radius);
+  }
+  .theme-summary-shape--large {
+    @include mdc-shape-radius($mdc-shape-large-component-radius);
+  }
+}
+
+.mdc-list-divider.typography-baseline-divider {
+  margin-top: 0;
+  margin-bottom: 12px;
+  border-bottom-color: $material-color-grey-200;
+}
+
+// Theme Builder app bar
+
+.theme-builder-app-bar {
+  display: none; // hide on >1310px screens
+  position: fixed;
+
+  @include mdc-top-app-bar-fill-color(white);
+  @include mdc-top-app-bar-icon-ink-color($material-color-grey-800);
+  @include mdc-elevation(1);
+
+  .mdc-top-app-bar__title {
+    width: 100%;
+    text-align: center;
+    padding: 0;
+  }
+}
+
+.mdc-drawer-app-content {
+  width: 100%;
+}
+
+.theme-builder-desc-banner {
+  display: none; // hide on >1310px screens
+  width: 100%;
+  text-align: center;
+  background: $material-color-grey-100;
+  color: rgba(0, 0, 0, .87);
+  padding: 10px;
+}
+*/
+@media (max-width: 1310px) {
+  .theme-builder-app-bar, .theme-builder-desc-banner {
+    display: block; }
+  .theme-builder-drawer {
+    display: none; } }
+
+.main-content {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  background: mdc-theme-prop-value(background); }
+
+.main-content:not(.mdc-top-app-bar--fixed-adjust) {
+  padding: 2vh 0; }
+
+.main-content .column {
+  width: 420px; }
+
+.component-section-row {
+  display: flex; }
+
+.component-section-row .component-section:first-child {
+  width: 200px; }
+
+.component-section {
+  margin: 16px 20px 40px 20px; }
+
+.component-section.dialog-component-section {
+  margin-bottom: 60px; }
+
+@media only screen and (max-width: 600px) {
+  .component-section {
+    margin-left: auto;
+    margin-right: auto; }
+  .mdc-image-list {
+    width: auto; }
+  .mdc-drawer {
+    width: 60%;
+    min-width: calc(100% - 56px); }
+  .column {
+    width: auto;
+    max-width: 420px;
+    padding-right: 8px;
+    padding-left: 8px; } }
+
+@media only screen and (max-width: 485px) {
+  .column {
+    overflow: hidden; }
+  .remix-fab {
+    position: fixed;
+    bottom: 16px;
+    right: auto;
+    margin: 0;
+    z-index: 200; }
+  .mdc-dialog .mdc-dialog__surface {
+    max-width: calc(100% - 100px); } }
+
+/* 
+.section-header {
+  display: flex;
+  height: 36px;
+  font-family: Roboto, sans-serif;
+  
+  a {
+    display: flex;
+    align-items: center;
+    color: if(mdc-theme-contrast-tone($mdc-theme-background) == "dark",
+      rgba(0, 0, 0, 0.54),
+      rgba(255, 255, 255, 0.54));
+  
+    &:hover, &:focus {
+    color: if(mdc-theme-contrast-tone($mdc-theme-background) == "dark",
+      rgba(0, 0, 0, 0.87),
+      rgba(255, 255, 255, 0.87));
+      text-decoration: none;
+    }
+  }
+  
+  .material-icons {
+    font-size: 1rem;
+    padding: 8px;
+
+    &.leading-icon {
+      padding-left: 0;
+    }
+  }
+}
+*/
+.component-wrapper {
+  margin: 16px 0; }
+
+.print .column {
+  width: 30vw; }
+
+.print .component-wrapper {
+  margin-bottom: 60px; }
+
+.print .component-wrapper.text-field-component-wrapper, .print .component-wrapper.chips-component-wrapper {
+  margin-bottom: 96px; }
+
+.print .theme-name {
+  margin-bottom: 8px; }
+
+.print .drawer-content--instructions .mdc-typography--overline {
+  font-size: 0.9rem; }
+
+.print .drawer-content--instructions .mdc-typography--body2 {
+  font-size: 1.2rem;
+  line-height: 1.75rem; }
+
+.print .drawer-content--options {
+  display: none; }
+
+.print .button-component-wrapper,
+.print .fab-component-wrapper {
+  margin: 24px 0 44px; }
+
+.print .top-bar-component-wrapper {
+  margin: 24px 0 52px; }
+
+.print .switch-component-wrapper {
+  margin-left: -8px;
+  margin-top: 24px; }
+
+.print .component-wrapper.checkbox-component-wrapper {
+  margin-left: -18px; }
+
+.print .component-wrapper.chips-component-wrapper-1 {
+  margin: 12px 0 92px -8px; }
+
+.print .select-component {
+  margin: 0 20px 40px 20px; }
+
+.print .column-2 {
+  transform: translate(-16px); }
+
+.print .card-component-wrapper {
+  margin: 16px 0 38px; }
+
+.print .component-wrapper.text-field-component-wrapper-1 {
+  margin: 22px 0 90px; }
+
+.print .dialog-component-wrapper {
+  margin: 8px 0 52px; }
+
+.print .linear-progress-section {
+  margin-top: -8px; }
+
+.print .tabs-section {
+  margin-top: -16px; }
+
+.print .radio-row {
+  margin-top: -24px;
+  margin-bottom: -16px; }
+
+.print .snackbar-section {
+  margin-top: -16px; }
+
+.print .image-section {
+  margin-top: -4px; }
+
+.print .switch-section {
+  margin-top: 0; }
+
+.print .short-app-bar-section,
+.print .menu-section {
+  margin-top: 0px; }
+
+.print .switch-checkbox-row {
+  margin-bottom: 16px; }
+
+.print .list-section {
+  margin-top: 8px; }
+
+.print .dialog-component-section {
+  margin-bottom: 52px;
+  margin-top: -16px; }
+
+.print .chips-section {
+  margin: 16px 20px -32px 20px; }
+
+.print .image-list-section {
+  transform: translateY(-8px); }
+
+.typography-callout {
+  font-size: 12px;
+  padding: 16px; }
+
+.font-link {
+  font-size: 12px;
+  margin-top: 8px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-bottom: -16px; }
+
+.font-link i {
+  font-size: 16px;
+  margin-left: 8px; }
+
+.theme-shape .varValue {
+  display: block; }
+
+.varValue {
+  font-weight: 600; }
+
+/*h1 {
+  @include $mdc-typography-styles(headline1);
+}
+
+h2 {
+  @include $mdc-typography-styles(headline2); 
+}
+
+h3 {
+  @include $mdc-typography-styles(headline3); 
+}
+
+h4 {
+  @include $mdc-typography-styles(headline4); 
+}
+
+h5 {
+  @include $mdc-typography-styles(headline5); 
+}
+
+h6 {
+  @include $mdc-typography-styles(headline6); 
+}
+
+// This sets all <p> elements with Material body1 typography styles
+p {
+  @include $mdc-typography-styles(body1);
+}
+
+// Checkbox and radio
+
+.mdc-checkbox, .mdc-radio {
+  margin-right: 4px;
+}
+
+// Switch
+
+.mdc-switch {
+  @include mdc-rtl-reflexive-box(margin, right, 20px);
+}
+
+// Top app bar
+
+.component-wrapper .mdc-top-app-bar {
+  @include mdc-elevation(4);
+  position: relative;
+  z-index: 1;
+
+  &:not(.mdc-top-app-bar--short) {
+    width: 100%;
+  }
+}
+
+// Card
+
+.mdc-card {
+  width: 100%;
+  color: $mdc-theme-on-surface;
+
+  .demo-card__primary {
+    padding: 1rem;
+  }
+
+  .demo-card__title,
+  .demo-card__subtitle {
+    margin: 0;
+  }
+
+  .demo-card__secondary {
+    padding: 0 1rem 8px;
+    opacity: 0.87;
+  }
+}
+
+// Linear progress
+
+.mdc-linear-progress {
+  width: 100%;
+}
+
+// Menu
+
+.mdc-menu-surface--anchor > .mdc-menu {
+  position: relative;
+  z-index: 1;
+}
+
+// Select
+
+.mdc-select {
+  width: 160px;
+}
+
+// Drawer
+
+.drawer-component-wrapper {
+  background: rgba(0, 0, 0, 0.3);
+
+  .mdc-drawer {
+    @include mdc-elevation(16);
+
+    .mdc-drawer__content {
+      padding: 0;
+    }
+  }
+}
+
+// Text field
+
+.mdc-text-field {
+  width: 100%;
+}
+
+// Tabs
+.component-wrapper .mdc-tab-bar {
+  background: $mdc-theme-primary;
+
+  .mdc-tab {
+    @include mdc-tab-text-label-color($mdc-theme-on-primary);
+
+    .mdc-tab__ripple {
+      @include mdc-states($mdc-theme-on-primary);
+    }
+  }
+
+  .mdc-tab-indicator {
+    @include mdc-tab-indicator-underline-color($mdc-theme-on-primary);
+  }
+}
+
+// Snackbar
+
+.mdc-snackbar {
+  position: relative;
+  margin: 0;
+  justify-content: start;
+  z-index: 1;
+}
+
+// Dialog
+
+.mdc-dialog {
+  position: relative;
+  justify-content: start;
+  z-index: 1;
+
+  .mdc-dialog__surface {
+    max-width: 100%;
+  }
+}
+
+.component-wrapper {
+  &.button-component-wrapper, &.fab-component-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  // Offset built-in padding to left-align all components
+
+  &.chips-component-wrapper {
+    @include mdc-rtl-reflexive-box(margin, left, -8px);
+  }
+
+  &.checkbox-component-wrapper, &.radio-component-wrapper {
+    @include mdc-rtl-reflexive-box(margin, left, -10px);
+  }
+
+  &.icon-button-component-wrapper {
+    @include mdc-rtl-reflexive-box(margin, left, -12px);
+  }
+}
+*/

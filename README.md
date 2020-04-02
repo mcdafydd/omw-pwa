@@ -1,8 +1,8 @@
-# OutOfMyWay Time Tracker Progressive Web App
+# Out Of My Way Time Tracker Progressive Web App
 
-*** (12/11/19) In active development, it may not work exactly as described, but it's getting close ***
+[![Netlify Status](https://api.netlify.com/api/v1/badges/99e7da03-201c-4516-b0ff-b6375ce4ecb6/deploy-status)](https://app.netlify.com/sites/clever-williams-1fb603/deploys)
 
-This is the official PWA for the command-line [Omw time tracker](https://github.com/mcdafydd/omw) server.  This PWA is usable on its own, but it is really meant to be used embedded from the [Omw hotkeys Chrome extension].  The extension provides the global hotkey binding to access the time tracking interface from anywhere on your computer, no matter what application is focused.
+This is the official PWA version of the [Omw command-line time tracker](https://github.com/mcdafydd/omw).  This PWA is usable on its own, but it is really meant to be used alongside the [Omw hotkeys Chrome extension].  The extension provides the global hotkey binding to allow for quick access to the task command interface from anywhere.
 
 # Prerequisites
 
