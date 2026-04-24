@@ -62,7 +62,7 @@
     "eslint-plugin-import": "^2.18.2",
     "husky": "^1.0.0",
     "jshint": "^2.10.2",
-    "lint-staged": "^8.0.0",
+    "lint-staged": "^16.4.0",
     "mocha": "^5.2.0",
     "pixelmatch": "^4.0.2",
     "prpl-server": "^1.4.0",
